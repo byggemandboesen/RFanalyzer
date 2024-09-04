@@ -1,8 +1,9 @@
 import numpy as np
 
-from RFanalyzer.distributed_components.distributed_component import DistributedComponent
+from RFanalyzer.transmission_lines.transmission_line import TransmissionLine
+import RFanalyzer.constants as consts
 
-class Microstrip(DistributedComponent):
+class Microstrip(TransmissionLine):
     def __init__(self, length: float, width: float) -> None:
         '''
         Class for microstrip lines
@@ -11,7 +12,7 @@ class Microstrip(DistributedComponent):
 
         width       - Width of microstrip line (mm)
         '''
-        super().__init__()
+        super().__init__(type="MS")
 
         self.L = length
         self.W = width
@@ -35,11 +36,3 @@ class Microstrip(DistributedComponent):
             return 60/np.sqrt(e_eff)*np.log(8*stackup.H/self.W+0.25*self.W/stackup.H)
         else:
             return 120*np.pi/(np.sqrt(e_eff)*(self.W/stackup.H+1.393+2/3*np.log(self.W/stackup.H+1.444)))
-
-    def inputImpedance(self, stackup: "Stackup", load: "Load", f: float |np.ndarray) -> np.complex128 | np.ndarray[np.complex128]:
-        '''
-        Calculate the input impedance at the input of a line under a given load
-        '''
-        Z0 = self.impedance(stackup=stackup)
-        ZL = load.impedance
-        raise NotImplementedError

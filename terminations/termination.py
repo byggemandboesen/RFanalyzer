@@ -12,11 +12,11 @@ class Open(Load):
         '''
         Open load
         '''
-        super().__init__(impedance=np.inf+0j)
+        super().__init__(impedance=np.inf)
 
 class Short(Load):
     def __init__(self) -> None:
         '''
         Short load
         '''
-        super().__init__(impedance=0+0j)
+        super().__init__(impedance=0)

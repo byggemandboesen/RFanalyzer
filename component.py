@@ -7,4 +7,4 @@ class Component:
 
         Contains the component type (lumped, distributed etc)
         '''
-        self.component_type = type
+        self.type = type

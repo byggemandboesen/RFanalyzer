@@ -1,4 +1,4 @@
-# from lumped_component import *
-# from capacitor import *
-# from inductor import *
-# from resistor import *
+from RFanalyzer.lumped_components.lumped_component import LumpedComponent
+from RFanalyzer.lumped_components.capacitor import Capacitor
+from RFanalyzer.lumped_components.inductor import Inductor
+from RFanalyzer.lumped_components.resistor import Resistor
