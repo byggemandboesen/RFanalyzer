@@ -12,7 +12,7 @@ class Microstrip(TransmissionLine):
 
         width       - Width of microstrip line (mm)
         '''
-        super().__init__(type="MS")
+        super().__init__()
 
         self.L = length
         self.W = width

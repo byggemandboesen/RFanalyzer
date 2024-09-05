@@ -7,7 +7,8 @@ class LumpedComponent(Component):
         '''
         Lumped component parent class
         '''
-        super().__init__(type=type)
+        super().__init__(type="Lumped")
+        self.lumped_type = type
         self.C = capacitance
         self.L = inductance
         self.R = resistance
@@ -17,9 +18,9 @@ class LumpedComponent(Component):
         Calculate impedance of lumped component
         '''
         omega = 2*np.pi*f
-        match self.type:
+        match self.lumped_type:
             case 'C':
-                impedance = 1j/(omega*self.C)
+                impedance = -1j/(omega*self.C)
             case 'L':
                 impedance = omega*self.L*1j
             case 'R':

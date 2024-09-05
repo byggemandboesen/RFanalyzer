@@ -6,11 +6,11 @@ import RFanalyzer.constants as consts
 # https://eng.libretexts.org/Bookshelves/Electrical_Engineering/Electronics/Microwave_and_RF_Design_II_-_Transmission_Lines_(Steer)/03%3A_Planar_Transmission_Lines
 
 class TransmissionLine(Component):
-    def __init__(self, type: str) -> None:
+    def __init__(self) -> None:
         '''
         Parent class for all transmission lines
         '''
-        super().__init__(type=type)
+        super().__init__(type="TL")
     
     @abstractmethod
     def effectivePermittivity(self, stackup: "Stackup") -> float:

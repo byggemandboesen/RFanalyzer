@@ -17,7 +17,7 @@ class CPW(TransmissionLine):
 
         grounded    - Is it grounded on one side of the PCB (default=True)
         '''
-        super().__init__(type="CPW")
+        super().__init__()
 
         self.L = length
         self.W = width
