@@ -61,10 +61,11 @@ class Circuit:
             
         return Z_in
         
-    def returnLoss(self, f: float | np.ndarray, Z_source: np.complex128 | np.ndarray) -> np.complex128 | np.ndarray:
+    def returnLoss(self, f: float | np.ndarray, Z_source: "Load") -> np.complex128 | np.ndarray:
         '''
         Calculate return loss of circuit
         '''
         Z_in = self.inputImpedance(f=f)
+        Z_source = Z_source.impedance
         
         return 20*np.log10(np.abs((Z_in-Z_source)/(Z_in+Z_source)))
