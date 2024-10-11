@@ -53,3 +53,4 @@ The circuit above can be seen below using [Smith V4.1](http://www.fritz.dellsper
 # TODO
 * Automatically optimize matching component values
 * Monte Carlo sensitivity analysis
+* Add simple distributed elements

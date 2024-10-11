@@ -17,14 +17,14 @@ class TransmissionLine(Component):
         '''
         Placeholder method for calculating effective permittivity of TL
         '''
-        raise NotImplementedError("Must implement function for this type of transmission line!")
+        raise NotImplementedError("Not implemented for this type of transmission line!")
     
     @abstractmethod
     def impedance(self, stackup: "Stackup") -> float:
         '''
         Placeholder method for calculating impedance of TL
         '''
-        raise NotImplementedError("Must implement function for this type of transmission line!")
+        raise NotImplementedError("Not implemented for this type of transmission line!")
     
     def inputImpedance(self, stackup: "Stackup", load_impedance: np.complex128, f: float | np.ndarray) -> np.complex128 | np.ndarray:
         '''
