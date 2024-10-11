@@ -69,3 +69,13 @@ class Circuit:
         Z_source = Z_source.impedance
         
         return 20*np.log10(np.abs((Z_in-Z_source)/(Z_in+Z_source)))
+    
+    def optimize(self, optimizing_variables: list):
+        '''
+        Optimize matching parameters to achieve best possible matching
+
+        TODO - Maybe use trust region
+
+        TODO - Use mutable objects to assign/modify component reactances
+        '''
+        optimizing_variables[0] += 10**(-12)
