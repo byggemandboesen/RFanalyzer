@@ -1,1 +1,2 @@
+from RFanalyzer.distributed_components.distributed_component import DistributedComponent
 from RFanalyzer.distributed_components.qw import QW

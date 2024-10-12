@@ -56,6 +56,8 @@ class Circuit:
                         Z_in = component.inputImpedance(stackup=self.STACKUP, load_impedance=Z_in, f=f)
                     case "Lumped":
                         Z_in += component.impedance(f=f)
+                    case "Distributed":
+                        Z_in = component.inputImpedance()
                     case _:
                         raise ValueError(f"Unexpected error occured when parsing component type: \"{component.type}\"")
             
