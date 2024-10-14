@@ -26,7 +26,8 @@ class TransmissionLine(Component):
         '''
         raise NotImplementedError("Not implemented for this type of transmission line!")
     
-    def inputImpedance(self, stackup: "Stackup", load_impedance: np.complex128, f: float | np.ndarray) -> np.complex128 | np.ndarray:
+    def inputImpedance(self, stackup: "Stackup", load_impedance: np.complex128,
+                       frequency: float | np.ndarray) -> np.complex128 | np.ndarray:
         '''
         Placeholder method for calculating input impedance of TL
         '''
