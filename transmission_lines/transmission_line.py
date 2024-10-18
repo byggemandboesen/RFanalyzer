@@ -36,7 +36,7 @@ class TransmissionLine(Component):
         L = self.L/10**3 # Convert to m
         
         e_eff = self.effectivePermittivity(stackup=stackup)
-        omega = 2*np.pi*f
+        omega = 2*np.pi*frequency
         beta = omega*np.sqrt(e_eff)/consts.c0
 
         Zin = Z0*(ZL+1j*Z0*np.tan(beta*L))/(Z0+1j*ZL*np.tan(beta*L))
