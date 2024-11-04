@@ -7,7 +7,7 @@ Firstly, clone to your machine.
 git clone git@github.com:byggemandboesen/RFanalyzer.git
 ```
 
-The library only relies on Numpy except if you will also be using the ```Touchstone``` class in which case you also need ````scikit-rf```.
+The library only relies on Numpy except if you will also be using the ```Touchstone``` class in which case you also need ```scikit-rf```.
 
 ```bash
 pip install scikit-rf
