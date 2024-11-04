@@ -23,6 +23,9 @@ class Coax(TransmissionLine):
         self.CORE_R = core_radius
         self.DIELECTRIC_R = dielectric_radius
     
+    def effectivePermittivity(self, stackup: "Stackup") -> float:
+        return stackup.er
+    
     def impedance(self, stackup: "Stackup") -> float:
         '''
         Calculate impedance of coax cable

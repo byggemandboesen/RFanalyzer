@@ -7,7 +7,11 @@ Firstly, clone to your machine.
 git clone git@github.com:byggemandboesen/RFanalyzer.git
 ```
 
-The library only relies on Numpy.
+The library only relies on Numpy except if you will also be using the ```Touchstone``` class in which case you also need ````scikit-rf```.
+
+```bash
+pip install scikit-rf
+```
 
 # Example
 The example below, shows the analysis of matching circuit for a 25Ohm antenna to a 50Ohm generator at 2.4GHz. <br>

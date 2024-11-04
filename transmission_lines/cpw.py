@@ -6,7 +6,7 @@ import RFanalyzer.constants as consts
 class CPW(TransmissionLine):
     def __init__(self, length: float, width: float, separation: float, grounded: bool = True) -> None:
         '''
-        Class for coplanar waveguides
+        TODO - Class for coplanar waveguides
 
         
         length      - Length of transmission line (mm)
