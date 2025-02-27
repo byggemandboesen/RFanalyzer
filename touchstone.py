@@ -18,6 +18,7 @@ class Touchstone:
         
         # Retrieve data
         self.f = self.NETWORK.f
+        self.p = self.NETWORK.s_deg
         match format.upper():
             case "DB":
                 self.s = self.NETWORK.s_db
@@ -27,7 +28,6 @@ class Touchstone:
                 self.s = self.NETWORK.s_re
                 self.p = self.NETWORK.s_im
         
-        self.p = self.NETWORK.s_deg
         self.Z = self.NETWORK.z
 
     def parameters(self) -> str:
@@ -59,6 +59,18 @@ class Touchstone:
         Return insertion loss and phase
         '''
         return self.s[:,1,0], self.p[:,1,0]
+
+    def S22(self) -> tuple[np.ndarray, np.ndarray]:
+        '''
+        Return port 2 return loss and phase
+        '''
+        return self.s[:,1,1], self.p[:,1,1]
+    
+    def S12(self) -> tuple[np.ndarray, np.ndarray]:
+        '''
+        Return insertion loss and phase as seen from port 2
+        '''
+        return self.s[:,0,1], self.p[:,0,1]
     
     def plot(self) -> None:
         '''
